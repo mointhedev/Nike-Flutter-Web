@@ -90,10 +90,75 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                     Flexible(
-                      flex: 2,
-                      child: Container(
-                        color: Colors.white,
+                        flex: 2,
+                        child: LayoutBuilder(
+                          builder: (context, size) {
+                            return Container(
+                              height: size.maxHeight,
+                              width: size.maxWidth,
+                              color: Colors.white,
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.only(left: 50),
+                                    height: size.maxHeight * 0.1,
+                                    child: Row(
+                                      children: <Widget>[
+                                        Text('MEN'),
+                                        Text('WOMEN'),
+                                        Text('KIDS'),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        )),
+                  ],
+                ),
+              ),
+              Center(
+                child: Row(
+                  children: <Widget>[
+                    Spacer(
+                      flex: 3,
+                    ),
+                    Container(
+                      height: ((constraints.maxWidth * 0.4 +
+                                  constraints.maxHeight * 0.6) *
+                              0.2) *
+                          2,
+                      width: ((constraints.maxWidth * 0.4 +
+                                  constraints.maxHeight * 0.6) *
+                              0.2) *
+                          2,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment(0.8,
+                              0.0), // 10% of the width, so there are ten blinds.
+                          colors: [
+                            const Color.fromRGBO(251, 217, 117, 1),
+                            const Color.fromRGBO(244, 176, 47, 1),
+                          ], // whitish to gray
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.redAccent.withOpacity(0.4),
+                            blurRadius: 55.0, // soften the shadow
+                            spreadRadius: 5.0, //extend the shadow
+                            offset: Offset(
+                              10.0, // Move to right 10  horizontally
+                              10.0, // Move to bottom 5 Vertically
+                            ),
+                          )
+                        ],
+                        shape: BoxShape.circle,
                       ),
+                    ),
+                    Spacer(
+                      flex: 8,
                     ),
                   ],
                 ),
@@ -104,9 +169,12 @@ class MyHomePage extends StatelessWidget {
                     Spacer(
                       flex: 3,
                     ),
-                    Shoe((constraints.maxWidth * 0.4 +
-                            constraints.maxHeight * 0.6) *
-                        0.2),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 100),
+                      child: Shoe((constraints.maxWidth * 0.4 +
+                              constraints.maxHeight * 0.6) *
+                          0.2),
+                    ),
                     Spacer(
                       flex: 8,
                     ),
