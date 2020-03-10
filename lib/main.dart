@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final String _select = null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,12 +74,18 @@ class MyHomePage extends StatelessWidget {
                                   Spacer(),
                                   Text(
                                     'EN',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Dubai',
+                                        fontWeight: FontWeight.w200),
                                   ),
                                   Spacer(),
                                   Text(
                                     'RU',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Dubai',
+                                        fontWeight: FontWeight.w200),
                                   ),
                                   Spacer(
                                     flex: 8,
@@ -102,11 +110,170 @@ class MyHomePage extends StatelessWidget {
                                   Container(
                                     padding: EdgeInsets.only(left: 50),
                                     height: size.maxHeight * 0.1,
+                                    width: size.maxWidth,
                                     child: Row(
                                       children: <Widget>[
-                                        Text('MEN'),
-                                        Text('WOMEN'),
-                                        Text('KIDS'),
+                                        Spacer(),
+                                        Row(
+                                          children: <Widget>[
+                                            Text(
+                                              'MEN',
+                                              style: TextStyle(
+                                                  fontFamily: 'Segoe UI',
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            PopupMenuButton(
+                                              itemBuilder:
+                                                  (BuildContext context) =>
+                                                      <PopupMenuEntry<String>>[
+                                                PopupMenuItem<String>(
+                                                  value: 'Value1',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'CLASSIC',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const PopupMenuItem<String>(
+                                                  value: 'Value2',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'SPORTS',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                  enabled: true,
+                                                ),
+                                              ],
+                                              elevation: 0.0,
+                                              child: Icon(
+                                                  Icons.keyboard_arrow_down),
+                                              color: Colors.black,
+                                              offset: Offset(0, 25),
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Row(
+                                          children: <Widget>[
+                                            Text(
+                                              'WOMEN',
+                                              style: TextStyle(
+                                                  fontFamily: 'Segoe UI',
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            PopupMenuButton(
+                                              itemBuilder:
+                                                  (BuildContext context) =>
+                                                      <PopupMenuEntry<String>>[
+                                                PopupMenuItem<String>(
+                                                  value: 'Value1',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'CLASSIC',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const PopupMenuItem<String>(
+                                                  value: 'Value2',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'SPORTS',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                  enabled: true,
+                                                ),
+                                              ],
+                                              elevation: 0.0,
+                                              child: Icon(
+                                                  Icons.keyboard_arrow_down),
+                                              color: Colors.black,
+                                              offset: Offset(0, 25),
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Row(
+                                          children: <Widget>[
+                                            Text(
+                                              'KIDS',
+                                              style: TextStyle(
+                                                  fontFamily: 'Segoe UI',
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            PopupMenuButton(
+                                              itemBuilder:
+                                                  (BuildContext context) =>
+                                                      <PopupMenuEntry<String>>[
+                                                PopupMenuItem<String>(
+                                                  value: 'Value1',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'CLASSIC',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const PopupMenuItem<String>(
+                                                  value: 'Value2',
+                                                  child: Center(
+                                                    child: Text(
+                                                      'SPORTS',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Segoe UI',
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                  enabled: true,
+                                                ),
+                                              ],
+                                              elevation: 0.0,
+                                              child: Icon(
+                                                  Icons.keyboard_arrow_down),
+                                              color: Colors.black,
+                                              offset: Offset(0, 25),
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          'CUSTOMIZE',
+                                          style: TextStyle(
+                                              fontFamily: 'Segoe UI',
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        Spacer(),
+                                        Spacer(),
+                                        Spacer(),
+                                        Spacer(),
+                                        Spacer(),
+                                        Icon(Icons.search),
+                                        Spacer(),
+                                        Icon(Icons.shopping_cart),
+                                        Spacer(),
+                                        Expanded(
+                                          flex: 2,
+                                          child: Container(color: Colors.black),
+                                        )
                                       ],
                                     ),
                                   )
