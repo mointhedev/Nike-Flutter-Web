@@ -71,6 +71,11 @@ flutter:
           weight: 700
         - asset: fonts/segoeuil.ttf
           weight: 300
+    - family: Bahnschrift
+      fonts:
+        - asset: fonts/bahnschrift-bold.ttf
+          weight: 800
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
